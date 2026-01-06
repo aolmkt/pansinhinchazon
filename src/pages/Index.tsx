@@ -14,12 +14,17 @@ const Index = () => {
             Pan casero que no inflama, no pesa y sabe a pan de verdad.
           </p>
           
-          {/* Video/GIF placeholder - estilo casero */}
-          <div className="bg-gray-100 rounded-lg aspect-video flex items-center justify-center border border-gray-200">
-            <div className="text-center text-gray-500 p-4">
-              <div className="text-4xl mb-2">🍞</div>
-              <p className="text-sm">Video: mano apretando pan, miolo esponjoso</p>
-              <p className="text-xs">(autoplay, sin sonido, estilo iPhone)</p>
+          {/* Video/GIF - OBRIGATÓRIO: mão apertando pão, elasticidade, close miolo */}
+          <div className="bg-black rounded-lg aspect-video flex items-center justify-center overflow-hidden border-2 border-gray-300 shadow-lg">
+            <div className="text-center text-white p-6">
+              <div className="text-5xl mb-4">🤌🍞</div>
+              <p className="text-base font-medium mb-2">INSERTA TU VIDEO AQUÍ</p>
+              <div className="text-sm text-gray-300 space-y-1">
+                <p>→ Mano apretando el pan</p>
+                <p>→ Suelta y el pan vuelve</p>
+                <p>→ Close en la miga esponjosa</p>
+              </div>
+              <p className="text-xs text-gray-400 mt-3">(Autoplay, sin sonido, grabado con celular)</p>
             </div>
           </div>
         </section>
@@ -43,6 +48,9 @@ const Index = () => {
             Solo no de la forma que te enseñaron.
           </p>
 
+          {/* RESPIRO VISUAL */}
+          <hr className="border-gray-200 my-8" />
+
           <h2 className="text-xl font-bold text-black pt-4">El error no eres tú</h2>
 
           <p>
@@ -64,6 +72,12 @@ const Index = () => {
             Es método equivocado.
           </p>
 
+          {/* FRASE DESTACADA - RESPIRO VISUAL */}
+          <p className="text-xl font-bold text-center py-6 text-black">
+            No es el pan lo que te inflama.<br />
+            Es la forma equivocada de hacerlo.
+          </p>
+
           <p>
             El mercado te enseñó a sustituir ingredientes,<br />
             pero nunca te enseñó a hacer pan de la forma correcta para el cuerpo real.
@@ -80,7 +94,22 @@ const Index = () => {
             </div>
           </div>
 
+          {/* RESPIRO VISUAL */}
+          <hr className="border-gray-200 my-8" />
+
           <h2 className="text-xl font-bold text-black pt-4">Existe una forma mejor</h2>
+
+          {/* IMAGEN HUMANA - Mujer comendo pão relaxada */}
+          <div className="my-6">
+            <div className="bg-amber-50 rounded-lg aspect-[4/3] flex items-center justify-center border border-amber-200">
+              <div className="text-center text-amber-700 p-4">
+                <div className="text-4xl mb-2">😊🍞</div>
+                <p className="text-sm font-medium">Foto: mujer comiendo pan</p>
+                <p className="text-xs">(Relaxada, medio sonrisa, no mira a cámara)</p>
+                <p className="text-xs mt-1">Mensaje: "Ella come pan y está bien."</p>
+              </div>
+            </div>
+          </div>
 
           <p>
             La solución no es eliminar el pan.<br />
@@ -112,6 +141,9 @@ const Index = () => {
             No es restricción.<br />
             Es hacerlo bien.
           </p>
+
+          {/* RESPIRO VISUAL */}
+          <hr className="border-gray-200 my-8" />
 
           {/* IMAGEN 2 - Pan cortado */}
           <div className="my-8">
@@ -149,23 +181,27 @@ const Index = () => {
 
         {/* PRUEBA SOCIAL - WHATSAPP */}
         <section className="mb-10">
-          <div className="space-y-4">
+          <h2 className="text-xl font-bold text-black mb-6 text-center">
+            Lo que me escribieron después de probar el pan
+          </h2>
+          
+          <div className="space-y-5">
             {/* Print WhatsApp 1 */}
-            <div className="bg-[#DCF8C6] rounded-lg p-3 max-w-[85%] ml-auto shadow-sm">
-              <p className="text-sm text-black">Amiga, hice el pan y no me inflamé nada 😭</p>
-              <p className="text-xs text-gray-500 text-right mt-1">10:32</p>
+            <div className="bg-[#DCF8C6] rounded-xl p-4 max-w-[90%] mx-auto shadow-md border border-green-200">
+              <p className="text-base text-black">Amiga, hice el pan y no me inflamé nada 😭</p>
+              <p className="text-xs text-gray-500 text-right mt-2">10:32</p>
             </div>
             
             {/* Print WhatsApp 2 */}
-            <div className="bg-[#DCF8C6] rounded-lg p-3 max-w-[85%] ml-auto shadow-sm">
-              <p className="text-sm text-black">Pensé que era otro pan raro, pero sí sabe a pan 🙌</p>
-              <p className="text-xs text-gray-500 text-right mt-1">14:15</p>
+            <div className="bg-[#DCF8C6] rounded-xl p-4 max-w-[90%] mx-auto shadow-md border border-green-200">
+              <p className="text-base text-black">Pensé que era otro pan raro, pero sí sabe a pan 🙌</p>
+              <p className="text-xs text-gray-500 text-right mt-2">14:15</p>
             </div>
             
             {/* Print WhatsApp 3 */}
-            <div className="bg-[#DCF8C6] rounded-lg p-3 max-w-[85%] ml-auto shadow-sm">
-              <p className="text-sm text-black">Lo comí en la mañana y cero pesadez después. Increíble.</p>
-              <p className="text-xs text-gray-500 text-right mt-1">09:47</p>
+            <div className="bg-[#DCF8C6] rounded-xl p-4 max-w-[90%] mx-auto shadow-md border border-green-200">
+              <p className="text-base text-black">Lo comí en la mañana y cero pesadez después. Increíble.</p>
+              <p className="text-xs text-gray-500 text-right mt-2">09:47</p>
             </div>
           </div>
         </section>
@@ -190,13 +226,23 @@ const Index = () => {
             y combinaciones que no pesan en el estómago.
           </p>
 
-          {/* MOCKUP DEL PRODUCTO */}
+          {/* MOCKUP DO PRODUTO - Estilo físico */}
           <div className="my-8">
-            <div className="bg-gray-100 rounded-lg p-6 flex items-center justify-center border border-gray-200">
-              <div className="text-center text-gray-500">
-                <div className="text-5xl mb-3">📖</div>
-                <p className="text-sm">Mockup: ebook como libro impreso</p>
-                <p className="text-xs">(sobre mesa, al lado de pan real)</p>
+            <div className="bg-amber-50 rounded-lg p-6 border border-amber-200 shadow-lg">
+              <div className="flex items-center justify-center gap-4">
+                <div className="text-center">
+                  <div className="text-6xl mb-2">📕</div>
+                  <p className="text-xs text-amber-700">Guía de recetas</p>
+                </div>
+                <div className="text-3xl">+</div>
+                <div className="text-center">
+                  <div className="text-5xl mb-2">🍞</div>
+                  <p className="text-xs text-amber-700">Pan real</p>
+                </div>
+              </div>
+              <div className="text-center mt-4 text-amber-800">
+                <p className="text-sm font-medium">INSERTA MOCKUP AQUÍ</p>
+                <p className="text-xs">(Ebook como libro sobre mesa, con pan al lado, sombra natural)</p>
               </div>
             </div>
           </div>
@@ -300,6 +346,7 @@ const Index = () => {
           >
             Sí, quiero volver a comer pan sin hincharme
           </Button>
+          {/* VARIACIÓN A/B TEST: "Sí, quiero comer pan sin hincharme ni sentir culpa" */}
 
           {/* GARANTÍA */}
           <div className="mt-4 flex items-center justify-center gap-2 text-gray-600">
