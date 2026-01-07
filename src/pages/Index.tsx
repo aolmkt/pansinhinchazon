@@ -65,8 +65,8 @@ const Index = () => {
 
           {/* PROVA SENSORIAL */}
           <p className="text-lg italic text-gray-700 text-center py-4">
-            "Volví a comer pan<br />
-            y dejé de terminar con la mano en la barriga."
+            "Comí pan en la mañana<br />
+            y no pasé la tarde hinchada ni incómoda."
           </p>
 
           {/* IMAGEN - Mujer con mano en abdomen */}
@@ -133,9 +133,18 @@ const Index = () => {
             <li>• culpa después de comer</li>
           </ul>
 
-          <p className="text-xl font-bold text-center py-6 text-black">
-            → Esto fue normalizado.<br />
-            Pero no es normal.
+          <p className="text-xl font-bold text-black">
+            Te dijeron que era normal.
+          </p>
+
+          <p className="text-lg text-black pl-4">
+            Normal sentir la barriga inflamada.<br />
+            Normal quedar pesada después de comer.<br />
+            Normal tener que aflojar el pantalón.
+          </p>
+
+          <p className="text-xl font-bold text-black">
+            Pero vivir así después de comer no lo es.
           </p>
 
           {/* RESPIRO VISUAL */}
@@ -374,8 +383,8 @@ const Index = () => {
           </p>
 
           <p className="text-xl font-bold text-center pb-6 text-black">
-            o corriges la forma de prepararlo hoy<br />
-            y sigues con tu vida.
+            No es dejar el pan.<br />
+            Es dejar de pasar mal después de comerlo.
           </p>
         </section>
 
@@ -390,7 +399,7 @@ const Index = () => {
             className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight"
             onClick={() => window.open('#checkout', '_blank')}
           >
-            Quiero comer pan sin pasar mal
+            Aprende a comer pan sin hincharte
           </Button>
 
           <p className="text-sm text-gray-500 mt-3">
