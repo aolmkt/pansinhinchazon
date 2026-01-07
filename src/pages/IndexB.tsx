@@ -138,7 +138,7 @@ const IndexB = () => {
 
         {/* BLOCO 7 — OFERTA */}
         <section id="oferta" className="mb-8 text-center">
-          <p className="text-lg text-black mb-6">
+          <p className="text-lg text-black mb-10">
             No es una dieta.<br />
             Es una corrección.
           </p>
