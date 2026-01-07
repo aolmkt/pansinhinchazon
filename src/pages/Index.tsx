@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import maoPaoImage from "@/assets/mao-no-pao.webp";
 
 const Index = () => {
   return (
@@ -14,18 +15,13 @@ const Index = () => {
             Pan casero que no inflama, no pesa y sabe a pan de verdad.
           </p>
           
-          {/* Video/GIF - OBRIGATÓRIO: mão apertando pão, elasticidade, close miolo */}
-          <div className="bg-black rounded-lg aspect-video flex items-center justify-center overflow-hidden border-2 border-gray-300 shadow-lg">
-            <div className="text-center text-white p-6">
-              <div className="text-5xl mb-4">🤌🍞</div>
-              <p className="text-base font-medium mb-2">INSERTA TU VIDEO AQUÍ</p>
-              <div className="text-sm text-gray-300 space-y-1">
-                <p>→ Mano apretando el pan</p>
-                <p>→ Suelta y el pan vuelve</p>
-                <p>→ Close en la miga esponjosa</p>
-              </div>
-              <p className="text-xs text-gray-400 mt-3">(Autoplay, sin sonido, grabado con celular)</p>
-            </div>
+          <div className="rounded-lg aspect-video overflow-hidden border border-gray-200 shadow-lg">
+            <img 
+              src={maoPaoImage} 
+              alt="Mano presionando pan casero con miga esponjosa"
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
           </div>
         </section>
 
