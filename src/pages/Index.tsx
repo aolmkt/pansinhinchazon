@@ -420,8 +420,8 @@ const Index = () => {
         {/* OFERTA Y CTA */}
         <section className="mb-10 text-center">
           <div className="mb-6">
-            <p className="text-gray-500 line-through text-lg">US$ 47</p>
-            <p className="text-2xl sm:text-3xl font-bold text-black">US$ 9</p>
+            <p className="text-gray-500 line-through text-lg">$ 47</p>
+            <p className="text-2xl sm:text-3xl font-bold text-black">$ 9</p>
           </div>
 
           <Button 
