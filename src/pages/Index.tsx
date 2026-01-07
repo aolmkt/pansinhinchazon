@@ -177,6 +177,20 @@ const Index = () => {
           {/* RESPIRO VISUAL */}
           <hr className="border-gray-200 my-8" />
 
+          <p className="text-lg text-black">
+            Si llegaste hasta aquí, ya entendiste algo importante:
+          </p>
+
+          <p className="text-xl font-bold text-black">
+            el problema nunca fue tu fuerza de voluntad.
+          </p>
+
+          <p className="text-lg text-black">
+            Fue seguir comiendo pan preparado de la forma equivocada.
+          </p>
+
+          <hr className="border-gray-200 my-8" />
+
           {/* IMAGEN 2 - Pan cortado */}
           <div className="my-8">
             <div className="rounded-lg overflow-hidden border border-gray-200 shadow-md">
@@ -347,9 +361,18 @@ const Index = () => {
             Sin promesas milagrosas.
           </p>
 
-          <p className="text-xl font-bold text-center py-6 text-black">
-            O sigues adaptándote al malestar después de comer pan,<br />
-            o pruebas la corrección hoy.
+          <p className="text-lg font-semibold text-center text-black">
+            Aquí no hay nada que "pensar".
+          </p>
+
+          <p className="text-xl font-bold text-center py-4 text-black">
+            O sigues adaptándote a la hinchazón<br />
+            cada vez que comes pan,
+          </p>
+
+          <p className="text-xl font-bold text-center pb-6 text-black">
+            o corriges la forma de prepararlo hoy<br />
+            y sigues con tu vida.
           </p>
         </section>
 
@@ -364,7 +387,7 @@ const Index = () => {
             className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight"
             onClick={() => window.open('#checkout', '_blank')}
           >
-            Quiero volver a comer pan sin pasarla mal
+            Quiero comer pan sin pasar mal
           </Button>
 
           <p className="text-sm text-gray-500 mt-3">
