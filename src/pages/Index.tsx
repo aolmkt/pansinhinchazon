@@ -9,13 +9,15 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <main className="max-w-xl mx-auto px-4 sm:px-5 py-8 md:py-12">
         
-        {/* HERO */}
+        {/* HERO - CONFIRMAÇÃO DA SUSPEITA */}
         <section className="mb-10">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black leading-tight mb-4">
-            El pan que puedes comer sin hincharte ni sentir culpa
+            Si cada vez que comes pan tu barriga se hincha,<br />
+            el problema NO es falta de control.
           </h1>
           <p className="text-lg text-gray-600 mb-6">
-            Pan casero que no inflama, no pesa y sabe a pan de verdad.
+            Tu cuerpo está reaccionando mal —<br />
+            y te entrenaron para pensar que eso es normal.
           </p>
           
           <div className="rounded-lg aspect-video overflow-hidden border border-gray-200 shadow-lg">
@@ -28,58 +30,45 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CUERPO DE LA COPY */}
+        {/* IDENTIFICAÇÃO PROFUNDA */}
         <section className="mb-10 text-lg text-black leading-relaxed space-y-6">
           <p>
-            Comes pan ya esperando lo que viene después.<br />
-            La <strong>hinchazón</strong>.<br />
-            La <strong>pesadez</strong> en el abdomen.<br />
-            Esa sensación de que algo "te cayó mal".
+            Comes pan.<br />
+            No exageras.<br />
+            A veces ni es tanto.
           </p>
 
           <p>
-            Y aparece el pensamiento automático:<br />
-            <em>"No vale la pena".</em>
-          </p>
-
-          <p>
-            El problema es que sí vale.<br />
-            Solo no de la forma que te enseñaron.
+            Igual viene la molestia.<br />
+            Y empiezas a negociar con tu propio cuerpo.
           </p>
 
           {/* RESPIRO VISUAL */}
           <hr className="border-gray-200 my-8" />
 
-          <h2 className="text-xl font-bold text-black pt-4">El error no eres tú</h2>
-
-          <p>
-            Lo que nadie te contó es que dejar el pan no soluciona nada.<br />
-            Solo te empuja a un ciclo de restricción, antojo acumulado y recaída.
+          {/* CONFIRMAÇÃO DA SUSPEITA + ALÍVIO */}
+          <p className="text-xl font-bold text-black">
+            No te lo estás imaginando.
           </p>
 
           <p>
-            No te sientes <strong>hinchada</strong> porque "el pan es pesado".<br />
-            Te sientes hinchada porque la mayoría de las recetas, incluso las alternativas, usan combinaciones equivocadas de ingredientes y harinas refinadas que fermentan en tu cuerpo, inflaman el intestino y dejan esa sensación de <strong>pesadez</strong> horas después.
+            No es drama.<br />
+            No es frescura.<br />
+            No es "cosa de tu cabeza".
           </p>
 
           <p>
-            Y no, eso no es falta de voluntad.<br />
-            Ni exageración.
+            Lo que pasa es simple e incómodo:
+          </p>
+
+          <p className="text-xl font-bold text-center py-4 text-black">
+            → Tu cuerpo no maneja bien la forma<br />
+            en que se hace el pan hoy.
           </p>
 
           <p>
-            Es método equivocado.
-          </p>
-
-          {/* FRASE DESTACADA - RESPIRO VISUAL */}
-          <p className="text-xl font-bold text-center py-6 text-black">
-            No es el pan lo que te inflama.<br />
-            Es la forma equivocada de hacerlo.
-          </p>
-
-          <p>
-            El mercado te enseñó a sustituir ingredientes,<br />
-            pero nunca te enseñó a hacer pan de la forma correcta para el cuerpo real.
+            Y mientras más intentas "normalizarlo",<br />
+            más te alejas de la solución.
           </p>
 
           {/* IMAGEN 1 - Mujer con mano en abdomen */}
@@ -97,7 +86,51 @@ const Index = () => {
           {/* RESPIRO VISUAL */}
           <hr className="border-gray-200 my-8" />
 
-          <h2 className="text-xl font-bold text-black pt-4">Existe una forma mejor</h2>
+          {/* INIMIGO NOMEADO */}
+          <h2 className="text-xl font-bold text-black pt-4">El problema no eres tú</h2>
+
+          <p>
+            El problema no es solo el gluten.<br />
+            Ni el pan en sí.
+          </p>
+
+          <p>
+            El problema es:
+          </p>
+
+          <ul className="space-y-1 pl-4">
+            <li>• el tipo de harina</li>
+            <li>• el modo de preparación acelerado</li>
+            <li>• los ingredientes escondidos</li>
+            <li>• la lógica industrial que prioriza volumen, no digestión</li>
+          </ul>
+
+          <p className="pt-4">
+            <strong>Resultado:</strong>
+          </p>
+
+          <p>
+            Hasta los panes "integrales", "fit" o "caseros"<br />
+            siguen causando:
+          </p>
+
+          <ul className="space-y-1 pl-4">
+            <li>• hinchazón</li>
+            <li>• inflamación</li>
+            <li>• molestia</li>
+            <li>• culpa después de comer</li>
+          </ul>
+
+          <p className="text-xl font-bold text-center py-6 text-black">
+            → Esto fue normalizado.<br />
+            Pero no es normal.
+          </p>
+
+          {/* RESPIRO VISUAL */}
+          <hr className="border-gray-200 my-8" />
+
+          {/* A VIRADA */}
+          <h2 className="text-xl font-bold text-black pt-4">La salida no es dejar el pan</h2>
 
           {/* IMAGEN HUMANA - Mujer comendo pão relaxada */}
           <div className="my-6">
@@ -112,34 +145,29 @@ const Index = () => {
           </div>
 
           <p>
-            La solución no es eliminar el pan.<br />
-            Es cambiar la forma en que se prepara.
+            La salida NO es cortar el pan de tu vida.<br />
+            Ni vivir en restricción.
           </p>
 
           <p>
-            Cuando usas ingredientes que el cuerpo reconoce,<br />
-            en proporciones que no generan <strong>hinchazón</strong>,<br />
-            y con métodos simples que respetan la digestión,<br />
-            el pan deja de ser un problema.
+            La salida es aprender la forma correcta de preparar pan<br />
+            para que tu cuerpo no entre en estado de defensa.
           </p>
 
           <p>
-            Entra ligero.<br />
-            No hincha.<br />
-            No inflama.<br />
-            No pasa factura después.
+            Existe una manera de:
           </p>
 
-          <p>
-            Es el tipo de pan que comes<br />
-            y sigues con tu día normal,<br />
-            sin culpa y sin malestar.
-          </p>
+          <ul className="space-y-1 pl-4">
+            <li>• comer pan caliente</li>
+            <li>• sentir saciedad</li>
+            <li>• no hincharte</li>
+            <li>• no pasarla mal después</li>
+          </ul>
 
-          <p>
-            No es dieta.<br />
-            No es restricción.<br />
-            Es hacerlo bien.
+          <p className="pt-4">
+            Y no depende de fuerza de voluntad.<br />
+            <strong>Depende de método.</strong>
           </p>
 
           {/* RESPIRO VISUAL */}
@@ -155,35 +183,103 @@ const Index = () => {
                 loading="lazy"
               />
             </div>
-            <p className="text-sm text-gray-500 mt-2 text-center">Pan casero, miga esponjosa, sin pesadez.</p>
           </div>
         </section>
 
-        {/* ESTO ES PARA TI */}
-        <section className="mb-10 text-lg text-black leading-relaxed">
-          <h2 className="text-xl font-bold text-black mb-4">Esto es para ti si:</h2>
-          <ul className="space-y-2 mb-8">
-            <li>✓ Amas el pan, pero lo evitas porque siempre te cae mal</li>
-            <li>✓ Ya probaste versiones "saludables" y te hinchaste igual</li>
-            <li>✓ No quieres vivir a base de restricciones ni dietas eternas</li>
-            <li>✓ Buscas algo que funcione en el cuerpo real</li>
-            <li>✓ Prefieres recetas simples a soluciones complicadas</li>
-            <li>✓ Quieres comer y seguir con tu día sin pesadez</li>
+        {/* APRESENTAÇÃO DO PRODUTO COMO CORREÇÃO */}
+        <section className="mb-10 text-lg text-black leading-relaxed space-y-6">
+          <h2 className="text-xl font-bold text-black">Lo que hice para resolver esto</h2>
+
+          <p>
+            Por eso reuní las recetas de panes<br />
+            que NO provocan esta reacción en el cuerpo.
+          </p>
+
+          <p>
+            Panes hechos:
+          </p>
+
+          <ul className="space-y-1 pl-4">
+            <li>• sin gluten</li>
+            <li>• sin azúcar</li>
+            <li>• con ingredientes que el cuerpo reconoce</li>
+            <li>• con preparación pensada para digestión real</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-black mb-4">Y esto no es para ti si:</h2>
-          <ul className="space-y-2 text-gray-600">
-            <li>✗ Te parece normal comer y sentirte inflamada</li>
-            <li>✗ Te gusta complicar recetas sencillas</li>
-            <li>✗ Buscas teoría en lugar de soluciones prácticas</li>
-            <li>✗ Esperas milagros sin entrar a la cocina</li>
+          <p className="pt-4">
+            No son "panes alternativos".<br />
+            <strong>Son panes que te permiten volver a comer sin miedo al después.</strong>
+          </p>
+
+          {/* MOCKUP DO PRODUTO */}
+          <div className="my-8">
+            <div className="bg-amber-50 rounded-lg p-6 border border-amber-200 shadow-lg">
+              <div className="flex items-center justify-center gap-4">
+                <div className="text-center">
+                  <div className="text-6xl mb-2">📕</div>
+                  <p className="text-xs text-amber-700">Recetas probadas</p>
+                </div>
+                <div className="text-3xl">+</div>
+                <div className="text-center">
+                  <div className="text-5xl mb-2">🍞</div>
+                  <p className="text-xs text-amber-700">Digestión real</p>
+                </div>
+              </div>
+              <div className="text-center mt-4 text-amber-800">
+                <p className="text-sm font-medium">INSERTA MOCKUP AQUÍ</p>
+                <p className="text-xs">(Ebook como libro sobre mesa, con pan al lado, sombra natural)</p>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Recibes:
+          </p>
+
+          <ul className="space-y-1 pl-4">
+            <li>• recetas de panes probadas</li>
+            <li>• preparación simple</li>
+            <li>• ingredientes accesibles</li>
+            <li>• opciones para desayuno, snack y acompañamiento</li>
           </ul>
+
+          <p className="pt-4">
+            Todo pensado para:
+          </p>
+
+          <p className="text-xl font-bold text-center py-4 text-black">
+            → comer<br />
+            → sentir confort<br />
+            → seguir con tu día
+          </p>
+
+          <p>
+            Sin cálculos.<br />
+            Sin culpa.
+          </p>
+        </section>
+
+        {/* PROVA LÓGICA */}
+        <section className="mb-10 text-lg text-black leading-relaxed space-y-6">
+          <p>
+            Cuando cambias la forma de preparar,<br />
+            el cuerpo deja de reaccionar como si estuviera siendo atacado.
+          </p>
+
+          <p>
+            Por eso tanta gente descubre que<br />
+            el problema nunca fue "pan de más".
+          </p>
+
+          <p className="text-xl font-bold text-center py-4 text-black">
+            Fue pan equivocado.
+          </p>
         </section>
 
         {/* PRUEBA SOCIAL - WHATSAPP */}
         <section className="mb-10">
           <h2 className="text-xl font-bold text-black mb-6 text-center">
-            Lo que me escribieron después de probar el pan
+            Esto es lo que me escriben
           </h2>
           
           <div className="space-y-5">
@@ -207,129 +303,49 @@ const Index = () => {
           </div>
         </section>
 
-        {/* EL MATERIAL */}
-        <section className="mb-10 text-lg text-black leading-relaxed space-y-6">
-          <h2 className="text-xl font-bold text-black">El material</h2>
-
-          <p>
-            Fue exactamente para esto que organicé este material.
-          </p>
-
-          <p>
-            Una guía directa con recetas de panes pensadas para el cuerpo real.<br />
-            Panes que puedes preparar en casa, con ingredientes simples,<br />
-            y comer sin sentirte hinchada después.
-          </p>
-
-          <p>
-            Nada de panes secos, duros o que se desmoronan.<br />
-            Aquí el foco es miga esponjosa, sabor a pan de verdad<br />
-            y combinaciones que no pesan en el estómago.
-          </p>
-
-          {/* MOCKUP DO PRODUTO - Estilo físico */}
-          <div className="my-8">
-            <div className="bg-amber-50 rounded-lg p-6 border border-amber-200 shadow-lg">
-              <div className="flex items-center justify-center gap-4">
-                <div className="text-center">
-                  <div className="text-6xl mb-2">📕</div>
-                  <p className="text-xs text-amber-700">Guía de recetas</p>
-                </div>
-                <div className="text-3xl">+</div>
-                <div className="text-center">
-                  <div className="text-5xl mb-2">🍞</div>
-                  <p className="text-xs text-amber-700">Pan real</p>
-                </div>
-              </div>
-              <div className="text-center mt-4 text-amber-800">
-                <p className="text-sm font-medium">INSERTA MOCKUP AQUÍ</p>
-                <p className="text-xs">(Ebook como libro sobre mesa, con pan al lado, sombra natural)</p>
-              </div>
-            </div>
-          </div>
-
-          <p>
-            No vas a encontrar discursos nutricionales complicados<br />
-            ni reglas imposibles de seguir.
-          </p>
-
-          <p>
-            Solo lo que importa:<br />
-            cómo hacer pan de una forma que entra ligero<br />
-            y no te cobra el precio horas después.
-          </p>
-
-          <p>
-            Ingredientes fáciles de encontrar<br />
-            en el supermercado común.
-          </p>
-
-          <p>
-            Este material existe para resolver un problema específico.<br />
-            No para convertirse en otro archivo olvidado.
-          </p>
-        </section>
-
-        {/* DUDAS */}
+        {/* DUDAS - SIMPLIFICADAS */}
         <section className="mb-10 text-lg text-black leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold text-black mb-4">Dudas que suelen aparecer</h2>
+          <h2 className="text-xl font-bold text-black mb-4">Dudas comunes</h2>
 
           <p>
-            <strong>"No tengo tiempo para esto."</strong><br />
-            Estas recetas fueron pensadas para la rutina real, no para una cocina perfecta.
+            <strong>"No tengo tiempo."</strong><br />
+            Recetas simples para rutina real.
           </p>
 
           <p>
             <strong>"Seguro es difícil."</strong><br />
-            No lo es. Si sabes mezclar ingredientes, puedes hacerlo.
+            Si sabes mezclar ingredientes, puedes hacerlo.
           </p>
 
           <p>
-            <strong>"Voy a tener que comprar cosas raras."</strong><br />
-            No. Ingredientes simples y accesibles.
+            <strong>"Necesito cosas raras."</strong><br />
+            No. Ingredientes de supermercado común.
           </p>
 
           <p>
-            <strong>"Ya probé otras recetas y no funcionaron."</strong><br />
-            Justamente por eso existe este material.<br />
-            El problema nunca fuiste tú.
-          </p>
-
-          <p>
-            <strong>"¿Y si compro y no lo uso?"</strong><br />
-            Esto no fue creado para acumular.<br />
-            Fue creado para resolver y desaparecer del camino.
+            <strong>"Ya probé otras y no funcionaron."</strong><br />
+            Exacto. Por eso existe esto.
           </p>
         </section>
 
-        {/* LA DECISIÓN */}
+        {/* TU DECISIÓN - CTA CONFRONTADOR */}
         <section className="mb-10 text-lg text-black leading-relaxed space-y-6">
-          <h2 className="text-xl font-bold text-black">La decisión</h2>
+          <h2 className="text-xl font-bold text-black">Tu decisión</h2>
 
           <p>
-            Si quieres seguir evitando el pan,<br />
-            pensando que el problema es la falta de control,<br />
-            puedes cerrar esta página ahora.
+            Por US$9, resuelves hoy<br />
+            lo que te viene molestando hace años.
           </p>
 
           <p>
-            Pero si quieres volver a comer pan<br />
-            sin hincharte después,<br />
-            sin esa pesadez incómoda,<br />
-            y sin convertir la comida en una lucha diaria,<br />
-            esto es para ti.
+            Acceso inmediato.<br />
+            Recetas directas.<br />
+            Sin promesas milagrosas.
           </p>
 
-          <p>
-            Recibes acceso inmediato al material<br />
-            con las recetas de panes diseñadas para entrar ligeras en el cuerpo<br />
-            y funcionar en la vida real.
-          </p>
-
-          <p>
-            Sin mensualidades.<br />
-            Sin complicaciones.<br />
-            Sin trampas.
+          <p className="text-xl font-bold text-center py-6 text-black">
+            O sigues negociando con la molestia<br />
+            o pruebas la corrección correcta ahora.
           </p>
         </section>
 
@@ -338,16 +354,18 @@ const Index = () => {
           <div className="mb-6">
             <p className="text-gray-500 line-through text-lg">US$ 47</p>
             <p className="text-2xl sm:text-3xl font-bold text-black">US$ 9</p>
-            <p className="text-sm text-gray-500 mt-1">Menos que una mala compra en el supermercado.</p>
           </div>
 
           <Button 
             className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight"
             onClick={() => window.open('#checkout', '_blank')}
           >
-            Sí, quiero volver a comer pan sin hincharme
+            Quiero volver a comer pan sin pasarla mal
           </Button>
-          {/* VARIACIÓN A/B TEST: "Sí, quiero comer pan sin hincharme ni sentir culpa" */}
+
+          <p className="text-sm text-gray-500 mt-3">
+            Acceso inmediato • Sin riesgo • Uso práctico
+          </p>
 
           {/* GARANTÍA */}
           <div className="mt-4 flex items-center justify-center gap-2 text-gray-600">
