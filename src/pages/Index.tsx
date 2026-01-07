@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import maoPaoImage from "@/assets/mao-no-pao.webp";
+import maoNaBarrigaImage from "@/assets/mao-na-barriga.webp";
 
 const Index = () => {
   return (
@@ -81,12 +82,13 @@ const Index = () => {
 
           {/* IMAGEN 1 - Mujer con mano en abdomen */}
           <div className="my-8">
-            <div className="bg-gray-100 rounded aspect-[4/3] flex items-center justify-center border border-gray-200">
-              <div className="text-center text-gray-500 p-4">
-                <div className="text-3xl mb-2">👩</div>
-                <p className="text-sm">Foto: mujer común, mano en abdomen</p>
-                <p className="text-xs">(estilo foto casera, no stock)</p>
-              </div>
+            <div className="rounded-lg overflow-hidden border border-gray-200 shadow-md">
+              <img 
+                src={maoNaBarrigaImage} 
+                alt="Mujer con mano en el abdomen mostrando incomodidad después de comer pan"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
 
