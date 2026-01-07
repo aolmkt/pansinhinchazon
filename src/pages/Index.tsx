@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import maoPaoImage from "@/assets/mao-no-pao.webp";
 import maoNaBarrigaImage from "@/assets/mao-na-barriga.webp";
+import comendoPaoImage from "@/assets/comendo-pao-feliz.webp";
 
 const Index = () => {
   return (
@@ -99,13 +100,13 @@ const Index = () => {
 
           {/* IMAGEN HUMANA - Mujer comendo pão relaxada */}
           <div className="my-6">
-            <div className="bg-amber-50 rounded-lg aspect-[4/3] flex items-center justify-center border border-amber-200">
-              <div className="text-center text-amber-700 p-4">
-                <div className="text-4xl mb-2">😊🍞</div>
-                <p className="text-sm font-medium">Foto: mujer comiendo pan</p>
-                <p className="text-xs">(Relaxada, medio sonrisa, no mira a cámara)</p>
-                <p className="text-xs mt-1">Mensaje: "Ella come pan y está bien."</p>
-              </div>
+            <div className="rounded-lg overflow-hidden border border-gray-200 shadow-md">
+              <img 
+                src={comendoPaoImage} 
+                alt="Mujer comiendo pan casero relajada en su cocina"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
 
