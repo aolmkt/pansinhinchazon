@@ -66,9 +66,14 @@ const Index = () => {
             en que se hace el pan hoy.
           </p>
 
-          <p>
-            Y mientras más intentas "normalizarlo",<br />
-            más te alejas de la solución.
+            <p>
+              Y mientras más intentas "normalizarlo",<br />
+              más te alejas de la solución.
+            </p>
+
+            <p className="text-lg font-semibold text-black pt-4">
+              Y cada vez que aceptas esa hinchazón como "normal",<br />
+              tu cuerpo paga el precio otra vez.
           </p>
 
           {/* IMAGEN 1 - Mujer con mano en abdomen */}
@@ -89,21 +94,25 @@ const Index = () => {
           {/* INIMIGO NOMEADO */}
           <h2 className="text-xl font-bold text-black pt-4">El problema no eres tú</h2>
 
-          <p>
-            El problema no es solo el gluten.<br />
-            Ni el pan en sí.
-          </p>
+            <p>
+              El problema no es solo el gluten.
+            </p>
 
-          <p>
-            El problema es:
-          </p>
+            <p>
+              Es ese pan "integral" del supermercado,<br />
+              el que dice ser saludable,<br />
+              el que compras creyendo que estás haciendo lo correcto.
+            </p>
 
-          <ul className="space-y-1 pl-4">
-            <li>• el tipo de harina</li>
-            <li>• el modo de preparación acelerado</li>
-            <li>• los ingredientes escondidos</li>
-            <li>• la lógica industrial que prioriza volumen, no digestión</li>
-          </ul>
+            <p>
+              Está hecho para producir rápido,<br />
+              durar semanas en la estantería<br />
+              y vender volumen.
+            </p>
+
+            <p className="font-semibold">
+              No para que tu cuerpo lo digiera bien.
+            </p>
 
           <p className="pt-4">
             <strong>Resultado:</strong>
@@ -154,21 +163,16 @@ const Index = () => {
             para que tu cuerpo no entre en estado de defensa.
           </p>
 
-          <p>
-            Existe una manera de:
-          </p>
+            <p className="text-xl font-bold text-center py-4 text-black">
+              Esta es la forma correcta de volver a comer pan.
+            </p>
 
-          <ul className="space-y-1 pl-4">
-            <li>• comer pan caliente</li>
-            <li>• sentir saciedad</li>
-            <li>• no hincharte</li>
-            <li>• no pasarla mal después</li>
-          </ul>
-
-          <p className="pt-4">
-            Y no depende de fuerza de voluntad.<br />
-            <strong>Depende de método.</strong>
-          </p>
+            <p>
+              Todo lo demás<br />
+              es seguir negociando con la hinchazón,<br />
+              el malestar<br />
+              y la culpa después de comer.
+            </p>
 
           {/* RESPIRO VISUAL */}
           <hr className="border-gray-200 my-8" />
@@ -344,8 +348,8 @@ const Index = () => {
           </p>
 
           <p className="text-xl font-bold text-center py-6 text-black">
-            O sigues negociando con la molestia<br />
-            o pruebas la corrección correcta ahora.
+            O sigues adaptándote al malestar después de comer pan,<br />
+            o pruebas la corrección hoy.
           </p>
         </section>
 
