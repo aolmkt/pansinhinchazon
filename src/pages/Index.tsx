@@ -9,15 +9,16 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <main className="max-w-xl mx-auto px-4 sm:px-5 py-8 md:py-12">
         
-        {/* HERO - CONFIRMAÇÃO DA SUSPEITA */}
+        {/* HERO - VERSÃO FINAL DOUG */}
         <section className="mb-10">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black leading-tight mb-4">
-            Si cada vez que comes pan tu barriga se hincha,<br />
-            el problema NO es falta de control.
+            Si el pan siempre te hincha,<br />
+            no es normal.
           </h1>
           <p className="text-lg text-gray-600 mb-6">
-            Tu cuerpo está reaccionando mal —<br />
-            y te entrenaron para pensar que eso es normal.
+            No es falta de control.<br />
+            No es tu cuerpo fallando.<br /><br />
+            Es cómo ese pan fue preparado antes de llegar a tu plato.
           </p>
           
           <div className="rounded-lg aspect-video overflow-hidden border border-gray-200 shadow-lg">
@@ -30,53 +31,45 @@ const Index = () => {
           </div>
         </section>
 
-        {/* IDENTIFICAÇÃO PROFUNDA */}
+        {/* BLOCO DE PRESSÃO CURTO */}
         <section className="mb-10 text-lg text-black leading-relaxed space-y-6">
           <p>
             Comes pan.<br />
-            No exageras.<br />
-            A veces ni es tanto.
+            No exageras.
           </p>
 
           <p>
-            Igual viene la molestia.<br />
-            Y empiezas a negociar con tu propio cuerpo.
+            Y aun así:
           </p>
 
-          {/* RESPIRO VISUAL */}
-          <hr className="border-gray-200 my-8" />
+          <p className="pl-4">
+            te sientes hinchada<br />
+            pesada<br />
+            incómoda
+          </p>
 
-          {/* CONFIRMAÇÃO DA SUSPEITA + ALÍVIO */}
+          <p className="font-semibold">
+            Y lo peor:<br />
+            te dijeron que era normal.
+          </p>
+
           <p className="text-xl font-bold text-black">
-            No te lo estás imaginando.
+            No lo es.
           </p>
 
-          <p>
-            No es drama.<br />
-            No es frescura.<br />
-            No es "cosa de tu cabeza".
-          </p>
-
-          <p>
-            Lo que pasa es simple e incómodo:
-          </p>
-
+          {/* MECANISMO ANTECIPADO */}
           <p className="text-xl font-bold text-center py-4 text-black">
-            → Tu cuerpo no maneja bien la forma<br />
-            en que se hace el pan hoy.
+            No es el pan.<br />
+            Es cómo lo fermentas antes de comerlo.
           </p>
 
-            <p>
-              Y mientras más intentas "normalizarlo",<br />
-              más te alejas de la solución.
-            </p>
-
-            <p className="text-lg font-semibold text-black pt-4">
-              Y cada vez que aceptas esa hinchazón como "normal",<br />
-              tu cuerpo paga el precio otra vez.
+          {/* PROVA SENSORIAL */}
+          <p className="text-lg italic text-gray-700 text-center py-4">
+            "Volví a comer pan<br />
+            y dejé de terminar con la mano en la barriga."
           </p>
 
-          {/* IMAGEN 1 - Mujer con mano en abdomen */}
+          {/* IMAGEN - Mujer con mano en abdomen */}
           <div className="my-8">
             <div className="rounded-lg overflow-hidden border border-gray-200 shadow-md">
               <img 
@@ -87,6 +80,16 @@ const Index = () => {
               />
             </div>
           </div>
+
+          {/* TRANSIÇÃO PARA A SOLUÇÃO */}
+          <p className="text-lg text-black">
+            No necesitas dejar el pan.<br />
+            Ni vivir con restricción.
+          </p>
+
+          <p className="text-xl font-bold text-black">
+            Solo dejar de prepararlo de la forma equivocada.
+          </p>
 
           {/* RESPIRO VISUAL */}
           <hr className="border-gray-200 my-8" />
