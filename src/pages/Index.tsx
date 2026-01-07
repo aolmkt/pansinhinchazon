@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import maoPaoImage from "@/assets/mao-no-pao.webp";
 import maoNaBarrigaImage from "@/assets/mao-na-barriga.webp";
 import comendoPaoImage from "@/assets/comendo-pao-feliz.webp";
+import paoImage from "@/assets/pao.webp";
 
 const Index = () => {
   return (
@@ -146,12 +147,13 @@ const Index = () => {
 
           {/* IMAGEN 2 - Pan cortado */}
           <div className="my-8">
-            <div className="bg-gray-100 rounded aspect-[4/3] flex items-center justify-center border border-gray-200">
-              <div className="text-center text-gray-500 p-4">
-                <div className="text-3xl mb-2">🥖</div>
-                <p className="text-sm">Foto: close del pan cortado, miga esponjosa</p>
-                <p className="text-xs">(tábua de madera, migajas)</p>
-              </div>
+            <div className="rounded-lg overflow-hidden border border-gray-200 shadow-md">
+              <img 
+                src={paoImage} 
+                alt="Pan casero cortado mostrando miga esponjosa sobre tabla de madera"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
             </div>
             <p className="text-sm text-gray-500 mt-2 text-center">Pan casero, miga esponjosa, sin pesadez.</p>
           </div>
