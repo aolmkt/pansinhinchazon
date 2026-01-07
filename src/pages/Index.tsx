@@ -63,6 +63,11 @@ const Index = () => {
             Es cómo lo fermentas antes de comerlo.
           </p>
 
+          <p className="text-lg text-black text-center py-4">
+            No es una receta suelta.<br />
+            Es una forma organizada de volver a comer pan durante la semana.
+          </p>
+
           {/* PROVA SENSORIAL */}
           <p className="text-lg italic text-gray-700 text-center py-4">
             "Comí pan en la mañana<br />
@@ -117,6 +122,10 @@ const Index = () => {
               No para que tu cuerpo lo digiera bien.
             </p>
 
+          <p className="text-lg text-black py-4">
+            No tienes que eliminar el pan para desinflamar.
+          </p>
+
           <p className="pt-4">
             <strong>Resultado:</strong>
           </p>
@@ -145,6 +154,13 @@ const Index = () => {
 
           <p className="text-xl font-bold text-black">
             Pero vivir así después de comer no lo es.
+          </p>
+
+          <p className="text-lg text-black py-6">
+            Comes pan y sigues tu día.<br />
+            Sin hinchazón.<br />
+            Sin culpa.<br />
+            Sin drama.
           </p>
 
           {/* RESPIRO VISUAL */}
@@ -214,6 +230,13 @@ const Index = () => {
               />
             </div>
           </div>
+
+          <p className="text-lg text-black text-center py-4">
+            Pan real.<br />
+            No seco.<br />
+            No duro.<br />
+            No "pan triste".
+          </p>
         </section>
 
         {/* APRESENTAÇÃO DO PRODUTO COMO CORREÇÃO */}
@@ -387,6 +410,12 @@ const Index = () => {
             Es dejar de pasar mal después de comerlo.
           </p>
         </section>
+
+        {/* FECHAMENTO DE IDENTIDADE */}
+        <p className="text-xl font-bold text-center py-6 text-black">
+          El problema nunca fue tu cuerpo.<br />
+          Fue seguir comiendo pan preparado de la forma equivocada.
+        </p>
 
         {/* OFERTA Y CTA */}
         <section className="mb-10 text-center">
