@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <main className="max-w-xl mx-auto px-5 py-8 md:py-12">
+      <main className="max-w-xl mx-auto px-4 sm:px-5 py-8 md:py-12">
         
         {/* HERO */}
         <section className="mb-10">
-          <h1 className="text-2xl md:text-3xl font-bold text-black leading-tight mb-4">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black leading-tight mb-4">
             El pan que puedes comer sin hincharte ni sentir culpa
           </h1>
           <p className="text-lg text-gray-600 mb-6">
@@ -336,12 +336,12 @@ const Index = () => {
         <section className="mb-10 text-center">
           <div className="mb-6">
             <p className="text-gray-500 line-through text-lg">US$ 47</p>
-            <p className="text-3xl font-bold text-black">US$ 9</p>
+            <p className="text-2xl sm:text-3xl font-bold text-black">US$ 9</p>
             <p className="text-sm text-gray-500 mt-1">Menos que una mala compra en el supermercado.</p>
           </div>
 
           <Button 
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white text-lg py-6 rounded-lg font-semibold"
+            className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight"
             onClick={() => window.open('#checkout', '_blank')}
           >
             Sí, quiero volver a comer pan sin hincharme
