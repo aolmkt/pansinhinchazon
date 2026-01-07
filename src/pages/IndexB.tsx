@@ -29,10 +29,10 @@ const IndexB = () => {
           </div>
 
           <Button 
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg text-base sm:text-lg"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight"
             onClick={() => window.open('#oferta', '_self')}
           >
-            Sí, quiero aprender a comer pan sin hincharme
+            Sí, quiero comer pan sin hincharme
           </Button>
         </section>
 
@@ -138,6 +138,11 @@ const IndexB = () => {
 
         {/* BLOCO 7 — OFERTA */}
         <section id="oferta" className="mb-8 text-center">
+          <p className="text-lg text-black mb-6">
+            No es una dieta.<br />
+            Es una corrección.
+          </p>
+
           <p className="text-lg text-gray-700 mb-4">
             Acceso inmediato al método completo.
           </p>
@@ -153,7 +158,7 @@ const IndexB = () => {
           </p>
 
           <Button 
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg text-base sm:text-lg mb-4"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight mb-4"
             onClick={() => window.open('https://pay.hotmart.com/YOUR_PRODUCT_ID', '_blank')}
           >
             Sí, quiero mi acceso ahora
@@ -180,12 +185,12 @@ const IndexB = () => {
           <div className="mb-6">
             <p className="text-lg text-gray-800 leading-relaxed">
               El problema nunca fue tu cuerpo.<br />
-              Fue seguir comiendo pan preparado de la forma equivocada.
+              Fue aceptar como "normal" algo que no lo era.
             </p>
           </div>
 
           <Button 
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg text-base sm:text-lg"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight"
             onClick={() => window.open('https://pay.hotmart.com/YOUR_PRODUCT_ID', '_blank')}
           >
             Sí, quiero mi acceso ahora
