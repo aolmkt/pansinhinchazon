@@ -6,6 +6,16 @@ import maoNaBarriga from "@/assets/mao-na-barriga.webp";
 import { Shield, MessageCircle } from "lucide-react";
 
 const IndexB = () => {
+  const getCheckoutUrl = () => {
+    const baseUrl = 'https://pay.hotmart.com/O104173365F?checkoutMode=10';
+    const currentParams = window.location.search;
+    
+    if (currentParams) {
+      return `${baseUrl}&${currentParams.substring(1)}`;
+    }
+    return baseUrl;
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <main className="max-w-md mx-auto px-4 py-6 sm:py-10">
@@ -159,7 +169,7 @@ const IndexB = () => {
 
           <Button 
             className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight mb-4"
-            onClick={() => window.open('https://pay.hotmart.com/YOUR_PRODUCT_ID', '_blank')}
+            onClick={() => window.open(getCheckoutUrl(), '_blank')}
           >
             Sí, quiero mi acceso ahora
           </Button>
@@ -191,7 +201,7 @@ const IndexB = () => {
 
           <Button 
             className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight"
-            onClick={() => window.open('https://pay.hotmart.com/YOUR_PRODUCT_ID', '_blank')}
+            onClick={() => window.open(getCheckoutUrl(), '_blank')}
           >
             Sí, quiero mi acceso ahora
           </Button>
