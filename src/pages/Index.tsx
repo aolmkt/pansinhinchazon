@@ -5,6 +5,16 @@ import comendoPaoImage from "@/assets/comendo-pao-feliz.webp";
 import paoImage from "@/assets/pao.webp";
 
 const Index = () => {
+  const getCheckoutUrl = () => {
+    const baseUrl = 'https://pay.hotmart.com/O104173365F?checkoutMode=10';
+    const currentParams = window.location.search;
+    
+    if (currentParams) {
+      return `${baseUrl}&${currentParams.substring(1)}`;
+    }
+    return baseUrl;
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <main className="max-w-xl mx-auto px-4 sm:px-5 py-8 md:py-12">
@@ -426,7 +436,7 @@ const Index = () => {
 
           <Button 
             className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight"
-            onClick={() => window.open('#checkout', '_blank')}
+            onClick={() => window.open(getCheckoutUrl(), '_blank')}
           >
             Aprende a comer pan sin hincharte
           </Button>
