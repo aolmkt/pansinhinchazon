@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      location.replace("/");
+      var path = location.pathname;
+      var search = location.search;
+      location.replace("/?redirect=" + encodeURIComponent(path + search));
     </script>
   </head>
+  <body></body>
 </html>
