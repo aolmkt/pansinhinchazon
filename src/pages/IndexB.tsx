@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 import paoImage from "@/assets/pao.webp";
 import maoNoPao from "@/assets/mao-no-pao.webp";
 import comendoPaoFeliz from "@/assets/comendo-pao-feliz.webp";
@@ -18,6 +19,10 @@ const IndexB = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Pan Sin Hinchazón - Come Pan Sin Sentirte Mal</title>
+        <meta name="description" content="No tienes que dejar el pan para sentirte bien. Aprende la forma correcta de prepararlo." />
+      </Helmet>
       <main className="max-w-md mx-auto px-4 py-6 sm:py-10">
         
         {/* BLOCO 1 — TOPO (ABOVE THE FOLD LATAM) */}
