@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 import maoPaoImage from "@/assets/mao-no-pao.webp";
 import maoNaBarrigaImage from "@/assets/mao-na-barriga.webp";
 import comendoPaoImage from "@/assets/comendo-pao-feliz.webp";
@@ -17,6 +18,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Pan Sin Hinchazón - Recetas de Pan que No Inflaman</title>
+        <meta name="description" content="Si el pan siempre te hincha, no es normal. El problema no es el pan, es cómo fue preparado." />
+      </Helmet>
       <main className="max-w-xl mx-auto px-4 sm:px-5 py-8 md:py-12">
         
         {/* HERO - VERSÃO FINAL DOUG */}
