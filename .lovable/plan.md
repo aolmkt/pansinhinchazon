@@ -1,100 +1,109 @@
 
 
-## Plano: Atualizar Código do Tracker.js
+## Plano: Converter Botões para Links `<a>` Normais
 
-### Arquivo a Modificar
-- `public/tracker.js`
+### Arquivos a Modificar
+- `src/pages/Index.tsx`
+- `src/pages/IndexB.tsx`
 
 ---
 
-## ALTERAÇÕES
+## ALTERAÇÕES EM INDEX.TSX
 
-Substituir o conteúdo atual pelo novo código com as seguintes melhorias:
+### 1. Remover a função `getCheckoutUrl` (linhas 9-17)
+Não será mais necessária pois o Auto-Linker do tracker.js adiciona o `sck` automaticamente.
 
-### Mudanças no código:
-
-| Antes | Depois |
-|-------|--------|
-| `fetch().catch()` síncrono | `async function trackPage()` com `try/catch` |
-| Sem `mode: 'cors'` | Adiciona `mode: 'cors'` para requisições cross-origin |
-| Comentários básicos | Comentários detalhados explicando cada seção |
-| Console: `'Tracking erro:'` | Console: `'Tracking Error:'` |
-
-### Novo código:
-
+### 2. Remover import do Button (se não usado em outro lugar)
 ```javascript
-/**
- * FACEBOOK TRACKING GATEWAY - FRONTEND SCRIPT
- * Instruções: Coloque este script no <head> de todas as páginas do seu site.
- * Ele deve rodar ANTES do script do Pixel do Facebook se possível.
- */
-(function() {
-    const API_URL = 'https://tracking.lavishcreative.com';
-    const COOKIE_NAME = 'external_id';
+// Remover: import { Button } from "@/components/ui/button";
+```
 
-    // 1. Função para capturar/gerar o ID Único
-    function getExternalId() {
-        const urlParams = new URLSearchParams(window.location.search);
-        let extId = urlParams.get('sck') || urlParams.get('external_id');
-        if (extId) {
-            // Se veio na URL (SCK da Hotmart ou link de anúncio), salva no cookie por 30 dias
-            const d = new Date();
-            d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
-            document.cookie = `${COOKIE_NAME}=${extId};expires=${d.toUTCString()};path=/;SameSite=Lax;Secure`;
-            return extId;
-        }
-        // Se não tem na URL, tenta ler do cookie
-        const match = document.cookie.match(new RegExp('(^| )' + COOKIE_NAME + '=([^;]+)'));
-        if (match) return match[2];
-        // Se não existe, gera um novo (ex: lead_timestamp_random)
-        const newId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-        document.cookie = `${COOKIE_NAME}=${newId};path=/;SameSite=Lax;Secure`;
-        return newId;
-    }
+### 3. Converter o CTA (linhas 442-447)
 
-    const externalId = getExternalId();
+**Antes:**
+```jsx
+<Button 
+  className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight"
+  onClick={() => window.open(getCheckoutUrl(), '_blank')}
+>
+  Aprende a comer pan sin hincharte
+</Button>
+```
 
-    // 2. Captura Cookies do Facebook (_fbp e _fbc)
-    function getFbCookie(name) {
-        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-        return match ? match[2] : null;
-    }
+**Depois:**
+```jsx
+<a 
+  href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight inline-flex items-center justify-center"
+>
+  Aprende a comer pan sin hincharte
+</a>
+```
 
-    // 3. Envia o evento de PageView para a sua API
-    async function trackPage() {
-        try {
-            await fetch(`${API_URL}/track`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                mode: 'cors',
-                body: JSON.stringify({
-                    event_name: 'PageView',
-                    external_id: externalId,
-                    url: window.location.href,
-                    fbp: getFbCookie('_fbp'),
-                    fbc: getFbCookie('_fbc')
-                })
-            });
-        } catch (e) {
-            console.error('Tracking Error:', e);
-        }
-    }
+---
 
-    // Executa o tracking
-    trackPage();
+## ALTERAÇÕES EM INDEXB.TSX
 
-    // Disponibiliza o ID para ser usado em botões de checkout
-    window.trackingData = { external_id: externalId };
-    
-    // DICA: Se você tem botões de compra, adicione &sck= + externalId no final do link
-})();
+### 1. Remover a função `getCheckoutUrl` (linhas 10-18)
+
+### 2. Remover import do Button
+```javascript
+// Remover: import { Button } from "@/components/ui/button";
+```
+
+### 3. Converter os 3 botões:
+
+**Botão 1 - Scroll para oferta (linhas 46-51):**
+```jsx
+<a 
+  href="#oferta"
+  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight inline-flex items-center justify-center"
+>
+  Sí, quiero comer pan sin hincharme
+</a>
+```
+
+**Botão 2 - Checkout principal (linhas 175-180):**
+```jsx
+<a 
+  href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight mb-4 inline-flex items-center justify-center"
+>
+  Sí, quiero mi acceso ahora
+</a>
+```
+
+**Botão 3 - CTA final (linhas 207-212):**
+```jsx
+<a 
+  href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight inline-flex items-center justify-center"
+>
+  Sí, quiero mi acceso ahora
+</a>
 ```
 
 ---
 
 ## RESUMO
 
-| Arquivo | Ação | Propósito |
-|---------|------|-----------|
-| `public/tracker.js` | Atualizar | Código mais robusto com async/await e CORS |
+| Arquivo | Ação | Detalhes |
+|---------|------|----------|
+| `src/pages/Index.tsx` | Modificar | Remover `getCheckoutUrl`, converter 1 botão para `<a>` |
+| `src/pages/IndexB.tsx` | Modificar | Remover `getCheckoutUrl`, converter 3 botões para `<a>` |
+
+---
+
+## RESULTADO
+
+O Auto-Linker do `tracker.js` vai automaticamente:
+1. Encontrar todos os links `<a href="...pay.hotmart.com...">` 
+2. Adicionar `&sck=lead_xxx_xxx` no final
+3. Garantir rastreamento de conversão sem código adicional
 
