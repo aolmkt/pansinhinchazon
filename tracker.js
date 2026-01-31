@@ -8,7 +8,7 @@
 (function() {
     // --- CONFIGURAÇÃO ---
     const API_URL = 'https://tracking.lavishcreative.com';
-    const FACEBOOK_PIXEL_ID = 'SEU_PIXEL_ID_AQUI'; // <--- COLOQUE SEU ID AQUI
+    const FACEBOOK_PIXEL_ID = '1464322035694515'; // <--- COLOQUE SEU ID AQUI
     const COOKIE_NAME = 'external_id';
 
     // 1. INICIALIZAÇÃO DO FACEBOOK PIXEL (Código Padrão da Meta)
@@ -22,7 +22,7 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         
-        fbq('init', 1464322035694515);
+        fbq('init', FACEBOOK_PIXEL_ID);
     }
 
     // 2. Identificação do Usuário (Cookie Persistente)
