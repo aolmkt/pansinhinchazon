@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
 import paoImage from "@/assets/pao.webp";
 import maoNoPao from "@/assets/mao-no-pao.webp";
@@ -7,15 +6,6 @@ import maoNaBarriga from "@/assets/mao-na-barriga.webp";
 import { Shield, MessageCircle } from "lucide-react";
 
 const IndexB = () => {
-  const getCheckoutUrl = () => {
-    const baseUrl = 'https://pay.hotmart.com/O104173365F?checkoutMode=10';
-    const currentParams = window.location.search;
-    
-    if (currentParams) {
-      return `${baseUrl}&${currentParams.substring(1)}`;
-    }
-    return baseUrl;
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -43,12 +33,12 @@ const IndexB = () => {
             />
           </div>
 
-          <Button 
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight"
-            onClick={() => window.open('#oferta', '_self')}
+          <a 
+            href="#oferta"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight inline-flex items-center justify-center"
           >
             Sí, quiero comer pan sin hincharme
-          </Button>
+          </a>
         </section>
 
         {/* BLOCO 2 — AUTORIDADE HUMANA (LATAM TRUST) */}
@@ -172,12 +162,14 @@ const IndexB = () => {
             Acceso inmediato.
           </p>
 
-          <Button 
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight mb-4"
-            onClick={() => window.open(getCheckoutUrl(), '_blank')}
+          <a 
+            href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight mb-4 inline-flex items-center justify-center"
           >
             Sí, quiero mi acceso ahora
-          </Button>
+          </a>
         </section>
 
         {/* BLOCO 8 — GARANTIA VISUAL */}
@@ -204,12 +196,14 @@ const IndexB = () => {
             </p>
           </div>
 
-          <Button 
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight"
-            onClick={() => window.open(getCheckoutUrl(), '_blank')}
+          <a 
+            href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight inline-flex items-center justify-center"
           >
             Sí, quiero mi acceso ahora
-          </Button>
+          </a>
         </section>
 
         {/* Footer */}
