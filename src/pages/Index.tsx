@@ -1,10 +1,18 @@
+import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import maoPaoImage from "@/assets/mao-no-pao.webp";
 import maoNaBarrigaImage from "@/assets/mao-na-barriga.webp";
 import comendoPaoImage from "@/assets/comendo-pao-feliz.webp";
 import paoImage from "@/assets/pao.webp";
+import { useTracking } from "@/hooks/useTracking";
 
 const Index = () => {
+  const priceRef = useRef<HTMLElement>(null);
+  const { observePriceSection, trackInitiateCheckout } = useTracking();
+
+  useEffect(() => {
+    return observePriceSection(priceRef.current);
+  }, [observePriceSection]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -423,7 +431,7 @@ const Index = () => {
         </p>
 
         {/* OFERTA Y CTA */}
-        <section className="mb-10 text-center">
+        <section ref={priceRef} className="mb-10 text-center">
           <div className="mb-6">
             <p className="text-gray-500 line-through text-lg">$ 47</p>
             <p className="text-2xl sm:text-3xl font-bold text-black">$ 9</p>
@@ -433,6 +441,7 @@ const Index = () => {
             href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackInitiateCheckout}
             className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight inline-flex items-center justify-center"
           >
             Aprende a comer pan sin hincharte
