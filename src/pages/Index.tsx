@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
 import maoPaoImage from "@/assets/mao-no-pao.webp";
 import maoNaBarrigaImage from "@/assets/mao-na-barriga.webp";
@@ -6,15 +5,6 @@ import comendoPaoImage from "@/assets/comendo-pao-feliz.webp";
 import paoImage from "@/assets/pao.webp";
 
 const Index = () => {
-  const getCheckoutUrl = () => {
-    const baseUrl = 'https://pay.hotmart.com/O104173365F?checkoutMode=10';
-    const currentParams = window.location.search;
-    
-    if (currentParams) {
-      return `${baseUrl}&${currentParams.substring(1)}`;
-    }
-    return baseUrl;
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -439,12 +429,14 @@ const Index = () => {
             <p className="text-2xl sm:text-3xl font-bold text-black">$ 9</p>
           </div>
 
-          <Button 
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight"
-            onClick={() => window.open(getCheckoutUrl(), '_blank')}
+          <a 
+            href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight inline-flex items-center justify-center"
           >
             Aprende a comer pan sin hincharte
-          </Button>
+          </a>
 
           <p className="text-sm text-gray-500 mt-3">
             Acceso inmediato • Sin riesgo • Uso práctico
