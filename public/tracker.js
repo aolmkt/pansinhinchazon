@@ -1,6 +1,8 @@
 /**
  * FACEBOOK TRACKING GATEWAY - FINAL OPTIMIZED
- * Envia external_id no Browser (Init) e no Server para garantir o Match 10/10.
+ * 1. Envia external_id no Browser (Init) e no Server.
+ * 2. Busca IP real (ipify).
+ * 3. Encontra links da Hotmart e adiciona &sck= automaticamente.
  */
 
 (function() {
@@ -60,16 +62,13 @@
     // NOVA FUNÇÃO INTELIGENTE PARA PEGAR O FBC (Correção Last Click)
     function getFbcValue() {
         // 1. Prioridade Máxima: URL (Novo Clique = Nova Atribuição)
-        // Se o usuário acabou de clicar num anúncio, o fbclid da URL é o que vale.
         const urlParams = new URLSearchParams(window.location.search);
         const fbclid = urlParams.get('fbclid');
         if (fbclid) {
-            // Formato oficial do FBC: fb.1.timestamp.fbclid
             return `fb.1.${Date.now()}.${fbclid}`;
         }
 
-        // 2. Fallback: Histórico (Cookie Antigo para atribuição de retorno)
-        // Se não tem fbclid na URL (acesso direto/orgânico), usamos o cookie do último clique.
+        // 2. Fallback: Histórico (Cookie Antigo)
         const cookieVal = getFbCookie('_fbc');
         if (cookieVal) return cookieVal;
 
@@ -82,7 +81,6 @@
 
         // A) Browser (Pixel)
         if (typeof fbq === 'function') {
-            // Não precisa enviar external_id aqui de novo, já foi no init
             fbq('track', eventName, {}, { eventID: eventId });
         }
 
@@ -93,7 +91,7 @@
             external_id: externalId,
             url: window.location.href,
             fbp: getFbCookie('_fbp'),
-            fbc: getFbcValue() // <--- USANDO A NOVA LÓGICA
+            fbc: getFbcValue()
         };
         if (ip) payload.client_ip = ip;
 
@@ -105,10 +103,34 @@
         }).catch(e => console.error('Tracking API Error:', e));
     }
 
-    // 4. EXECUÇÃO
+    // 4. EXECUÇÃO DO TRACKING
     fetch('https://api64.ipify.org?format=json')
         .then(res => res.json())
         .then(data => sendEvent('PageView', data.ip))
         .catch(() => sendEvent('PageView', null));
+
+    // 5. AUTO-LINKER: Adiciona ?sck=... nos botões da Hotmart automaticamente
+    function runAutoLinker() {
+        setTimeout(function() {
+            const links = document.querySelectorAll('a[href*="pay.hotmart.com"]');
+            links.forEach(el => {
+                // Se já tem sck, não mexe
+                if(el.href.indexOf('sck=') > -1) return;
+                
+                // Verifica separador (? ou &)
+                const sep = el.href.includes('?') ? '&' : '?';
+                
+                // Adiciona o ID ao final
+                el.href = el.href + sep + 'sck=' + externalId;
+            });
+        }, 500); // Pequeno delay para garantir que o DOM renderizou
+    }
+
+    // Garante que roda assim que o site carregar
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runAutoLinker);
+    } else {
+        runAutoLinker();
+    }
 
 })();
