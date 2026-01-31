@@ -1,17 +1,41 @@
 /**
- * FACEBOOK TRACKING GATEWAY - ALL-IN-ONE SCRIPT
- * 1. Inicia o Pixel do Facebook (Navegador)
- * 2. Gera ID Único e Cookies
- * 3. Envia para API (Servidor) com Deduplicação
+ * FACEBOOK TRACKING GATEWAY - FINAL OPTIMIZED
+ * Envia external_id no Browser (Init) e no Server para garantir o Match 10/10.
  */
 
 (function() {
     // --- CONFIGURAÇÃO ---
     const API_URL = 'https://tracking.lavishcreative.com';
-    const FACEBOOK_PIXEL_ID = '1464322035694515'; // <--- COLOQUE SEU ID AQUI
+    const FACEBOOK_PIXEL_ID = 'SEU_PIXEL_ID_AQUI'; // <--- SEU PIXEL
     const COOKIE_NAME = 'external_id';
 
-    // 1. INICIALIZAÇÃO DO FACEBOOK PIXEL (Código Padrão da Meta)
+    // 1. GERAÇÃO/RECUPERAÇÃO DO ID (Obrigatório acontecer antes do Pixel iniciar)
+    function getExternalId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        let extId = urlParams.get('sck') || urlParams.get('external_id');
+
+        // Se tem na URL, salva/renova cookie
+        if (extId) {
+            const d = new Date();
+            d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+            document.cookie = `${COOKIE_NAME}=${extId};expires=${d.toUTCString()};path=/;SameSite=Lax;Secure`;
+            return extId;
+        }
+
+        // Tenta pegar do cookie
+        const match = document.cookie.match(new RegExp('(^| )' + COOKIE_NAME + '=([^;]+)'));
+        if (match) return match[2];
+
+        // Gera novo se não existir
+        const newId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        document.cookie = `${COOKIE_NAME}=${newId};path=/;SameSite=Lax;Secure`;
+        return newId;
+    }
+
+    const externalId = getExternalId();
+    window.trackingData = { external_id: externalId };
+
+    // 2. INICIALIZAÇÃO DO FACEBOOK PIXEL (Com External ID)
     if (!window.fbq) {
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -22,47 +46,28 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         
-        fbq('init', FACEBOOK_PIXEL_ID);
+        // AQUI ESTÁ A MÁGICA: Já inicia dizendo quem é o usuário
+        fbq('init', FACEBOOK_PIXEL_ID, { 
+            external_id: externalId 
+        });
     }
-
-    // 2. Identificação do Usuário (Cookie Persistente)
-    function getExternalId() {
-        const urlParams = new URLSearchParams(window.location.search);
-        let extId = urlParams.get('sck') || urlParams.get('external_id');
-
-        if (extId) {
-            const d = new Date();
-            d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
-            document.cookie = `${COOKIE_NAME}=${extId};expires=${d.toUTCString()};path=/;SameSite=Lax;Secure`;
-            return extId;
-        }
-        const match = document.cookie.match(new RegExp('(^| )' + COOKIE_NAME + '=([^;]+)'));
-        if (match) return match[2];
-
-        const newId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-        document.cookie = `${COOKIE_NAME}=${newId};path=/;SameSite=Lax;Secure`;
-        return newId;
-    }
-
-    const externalId = getExternalId();
-    window.trackingData = { external_id: externalId };
 
     function getFbCookie(name) {
         const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
         return match ? match[2] : null;
     }
 
-    // 3. Função de Envio Híbrido (Browser + Server)
+    // 3. ENVIO HÍBRIDO (Browser + Server)
     function sendEvent(eventName, ip = null) {
-        // Gera EventID para Deduplicação
         const eventId = `${eventName.toLowerCase()}_${externalId}_${Date.now()}`;
 
-        // A) Dispara Pixel do Navegador
+        // A) Browser (Pixel)
         if (typeof fbq === 'function') {
+            // Não precisa enviar external_id aqui de novo, já foi no init
             fbq('track', eventName, {}, { eventID: eventId });
         }
 
-        // B) Envia para Servidor (API)
+        // B) Server (API)
         const payload = {
             event_name: eventName,
             event_id: eventId,
@@ -81,7 +86,7 @@
         }).catch(e => console.error('Tracking API Error:', e));
     }
 
-    // 4. Execução (Busca IP -> Dispara Eventos)
+    // 4. EXECUÇÃO
     fetch('https://api64.ipify.org?format=json')
         .then(res => res.json())
         .then(data => sendEvent('PageView', data.ip))
