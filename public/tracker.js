@@ -6,7 +6,7 @@
 (function() {
     // --- CONFIGURAÇÃO ---
     const API_URL = 'https://tracking.lavishcreative.com';
-    const FACEBOOK_PIXEL_ID = 'SEU_PIXEL_ID_AQUI'; // <--- SEU PIXEL
+    const FACEBOOK_PIXEL_ID = '1464322035694515'; // <--- SEU PIXEL
     const COOKIE_NAME = 'external_id';
 
     // 1. GERAÇÃO/RECUPERAÇÃO DO ID (Obrigatório acontecer antes do Pixel iniciar)
