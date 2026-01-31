@@ -57,6 +57,25 @@
         return match ? match[2] : null;
     }
 
+    // NOVA FUNÇÃO INTELIGENTE PARA PEGAR O FBC (Correção Last Click)
+    function getFbcValue() {
+        // 1. Prioridade Máxima: URL (Novo Clique = Nova Atribuição)
+        // Se o usuário acabou de clicar num anúncio, o fbclid da URL é o que vale.
+        const urlParams = new URLSearchParams(window.location.search);
+        const fbclid = urlParams.get('fbclid');
+        if (fbclid) {
+            // Formato oficial do FBC: fb.1.timestamp.fbclid
+            return `fb.1.${Date.now()}.${fbclid}`;
+        }
+
+        // 2. Fallback: Histórico (Cookie Antigo para atribuição de retorno)
+        // Se não tem fbclid na URL (acesso direto/orgânico), usamos o cookie do último clique.
+        const cookieVal = getFbCookie('_fbc');
+        if (cookieVal) return cookieVal;
+
+        return null;
+    }
+
     // 3. ENVIO HÍBRIDO (Browser + Server)
     function sendEvent(eventName, ip = null) {
         const eventId = `${eventName.toLowerCase()}_${externalId}_${Date.now()}`;
@@ -74,7 +93,7 @@
             external_id: externalId,
             url: window.location.href,
             fbp: getFbCookie('_fbp'),
-            fbc: getFbCookie('_fbc')
+            fbc: getFbcValue() // <--- USANDO A NOVA LÓGICA
         };
         if (ip) payload.client_ip = ip;
 
