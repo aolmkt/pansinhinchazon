@@ -1,44 +1,74 @@
 
 
-## Plano: Reorganizar Rotas
+## Plano: Adicionar Script UTMify
 
 ### Objetivo
-Colocar a página Safe como principal (`/`) e mover a Index atual para `/a`.
+Adicionar o script UTMify no `index.html` para captura e persistência de parâmetros UTM em todas as páginas.
 
 ---
 
-### Alteração Única
+### Análise de Compatibilidade
 
-**Arquivo:** `src/App.tsx`
+**Resultado: ✅ Sem conflitos**
 
-**De:**
-```tsx
-<Route path="/" element={<Index />} />
-<Route path="/b" element={<IndexB />} />
-<Route path="/safe" element={<Safe />} />
+| Aspecto | tracker.js | UTMify | Status |
+|---------|------------|--------|--------|
+| Parâmetros gerenciados | `sck`, `external_id`, `fbclid` | `utm_*` | ✅ Diferentes |
+| Variáveis globais | `trackEvent`, `trackingData`, `fbq` | `utmify` | ✅ Sem colisão |
+| Auto-linker | Adiciona `sck=` aos links Hotmart | Adiciona `utm_*` aos links | ✅ Complementares |
+| Cookies | `external_id`, `_fbp`, `_fbc` | UTMs próprios | ✅ Independentes |
+
+---
+
+### Alteração
+
+**Arquivo:** `index.html`
+
+**Adicionar após a linha 32 (script do tracker):**
+
+```html
+<!-- UTMify -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 ```
 
-**Para:**
-```tsx
-<Route path="/" element={<Safe />} />
-<Route path="/a" element={<Index />} />
-<Route path="/b" element={<IndexB />} />
+---
+
+### Resultado Final do `<head>`
+
+```html
+<!-- Tracker -->
+<script src="/tracker.js"></script>
+
+<!-- UTMify -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 ```
 
 ---
 
-### Resultado Final
+### Comportamento Esperado
 
-| Rota | Página | Público Alvo |
-|------|--------|--------------|
-| `/` | Safe | Tráfego orgânico (SEO, redes) |
-| `/a` | Index | Tráfego pago (versão A) |
-| `/b` | IndexB | Tráfego pago (versão B) |
+1. **Visitante chega via anúncio**: `?utm_source=facebook&utm_medium=cpc&utm_campaign=pan`
+2. **UTMify captura e persiste** os UTMs em cookies
+3. **tracker.js captura** `sck` ou gera `external_id`
+4. **Ao clicar no checkout**, o link terá AMBOS:
+   - `sck=lead_xxx` (do tracker.js)
+   - `utm_source=facebook&...` (do UTMify)
 
 ---
 
-### Impacto
-- Nenhuma alteração nas páginas em si
-- Apenas reorganização de rotas
-- O tracking continua funcionando normalmente em todas
+### Notas Técnicas
+
+- O atributo `data-utmify-prevent-subids` evita criação de sub-IDs automáticos
+- `async defer` garante carregamento não-bloqueante
+- Funciona automaticamente em todas as rotas (`/`, `/a`, `/b`)
 
