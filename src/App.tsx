@@ -27,9 +27,9 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<Safe />} />
+              <Route path="/a" element={<Index />} />
               <Route path="/b" element={<IndexB />} />
-              <Route path="/safe" element={<Safe />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
