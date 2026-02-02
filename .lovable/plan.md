@@ -1,109 +1,145 @@
 
+## Plano: Criar Página Safe para Tráfego Orgânico
 
-## Plano: Converter Botões para Links `<a>` Normais
+### Conceito
 
-### Arquivos a Modificar
-- `src/pages/Index.tsx`
-- `src/pages/IndexB.tsx`
+Uma landing page de venda direta tradicional para tráfego orgânico (SEO, redes sociais orgânicas), seguindo o padrão do mercado LATAM espanhol:
 
----
-
-## ALTERAÇÕES EM INDEX.TSX
-
-### 1. Remover a função `getCheckoutUrl` (linhas 9-17)
-Não será mais necessária pois o Auto-Linker do tracker.js adiciona o `sck` automaticamente.
-
-### 2. Remover import do Button (se não usado em outro lugar)
-```javascript
-// Remover: import { Button } from "@/components/ui/button";
-```
-
-### 3. Converter o CTA (linhas 442-447)
-
-**Antes:**
-```jsx
-<Button 
-  className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight"
-  onClick={() => window.open(getCheckoutUrl(), '_blank')}
->
-  Aprende a comer pan sin hincharte
-</Button>
-```
-
-**Depois:**
-```jsx
-<a 
-  href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base md:text-lg py-4 md:py-6 min-h-[56px] md:min-h-[64px] rounded-lg font-semibold whitespace-normal leading-tight inline-flex items-center justify-center"
->
-  Aprende a comer pan sin hincharte
-</a>
-```
+- Estrutura clássica de vendas
+- Tom mais amigável e menos confrontacional
+- CTA claro desde o início
+- Benefícios destacados
+- Prova social
+- Oferta direta
 
 ---
 
-## ALTERAÇÕES EM INDEXB.TSX
+### Estrutura da Página `/safe`
 
-### 1. Remover a função `getCheckoutUrl` (linhas 10-18)
-
-### 2. Remover import do Button
-```javascript
-// Remover: import { Button } from "@/components/ui/button";
-```
-
-### 3. Converter os 3 botões:
-
-**Botão 1 - Scroll para oferta (linhas 46-51):**
-```jsx
-<a 
-  href="#oferta"
-  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight inline-flex items-center justify-center"
->
-  Sí, quiero comer pan sin hincharme
-</a>
-```
-
-**Botão 2 - Checkout principal (linhas 175-180):**
-```jsx
-<a 
-  href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight mb-4 inline-flex items-center justify-center"
->
-  Sí, quiero mi acceso ahora
-</a>
-```
-
-**Botão 3 - CTA final (linhas 207-212):**
-```jsx
-<a 
-  href="https://pay.hotmart.com/O104173365F?checkoutMode=10"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-lg leading-tight inline-flex items-center justify-center"
->
-  Sí, quiero mi acceso ahora
-</a>
+```text
++------------------------------------------+
+|  HERO                                     |
+|  Headline: "Recetas de Pan Sin Gluten     |
+|  que No Te Hinchan"                       |
+|  Subheadline: Benefício direto            |
+|  CTA primário                             |
++------------------------------------------+
+|  O QUE INCLUYE                            |
+|  Lista de benefícios com ícones           |
+|  (check marks verdes)                     |
++------------------------------------------+
+|  PARA QUIÉN ES                            |
+|  Lista de perfis ideais                   |
++------------------------------------------+
+|  IMAGEN PRODUCTO                          |
+|  Mockup do ebook                          |
++------------------------------------------+
+|  TESTIMONIOS                              |
+|  Cards com depoimentos                    |
++------------------------------------------+
+|  OFERTA                                   |
+|  Preço de/por                             |
+|  CTA grande                               |
+|  Garantía                                 |
++------------------------------------------+
+|  FAQ                                      |
+|  Perguntas frequentes simples             |
++------------------------------------------+
+|  CTA FINAL                                |
++------------------------------------------+
+|  FOOTER                                   |
++------------------------------------------+
 ```
 
 ---
 
-## RESUMO
+### Diferenças das Outras Versões
 
-| Arquivo | Ação | Detalhes |
-|---------|------|----------|
-| `src/pages/Index.tsx` | Modificar | Remover `getCheckoutUrl`, converter 1 botão para `<a>` |
-| `src/pages/IndexB.tsx` | Modificar | Remover `getCheckoutUrl`, converter 3 botões para `<a>` |
+| Aspecto | Index (A) | IndexB | Safe (Nova) |
+|---------|-----------|--------|-------------|
+| Tom | Confrontacional | Trust LATAM | Tradicional/Vendedor |
+| Público | Tráfego pago frio | Tráfego pago LATAM | Tráfego orgânico |
+| Estrutura | Editorial longa | Blocos curtos | Landing clássica |
+| Headline | "Si el pan siempre te hincha, no es normal" | Igual | "Recetas de Pan Sin Gluten que No Te Hinchan" |
+| CTAs | 1 ao final | 2 (topo + final) | 3 (hero + meio + final) |
+| FAQ | Dudas inline | Não tem | Accordion tradicional |
 
 ---
 
-## RESULTADO
+### Conteúdo dos Blocos
 
-O Auto-Linker do `tracker.js` vai automaticamente:
-1. Encontrar todos os links `<a href="...pay.hotmart.com...">` 
-2. Adicionar `&sck=lead_xxx_xxx` no final
-3. Garantir rastreamento de conversão sem código adicional
+**HERO**
+- Headline: "Recetas de Pan Sin Gluten que No Te Hinchan"
+- Subheadline: "Aprende a preparar pan casero que tu cuerpo digiere sin problemas"
+- CTA: "Quiero las recetas - $9"
+- Imagen: mao-no-pao.webp
 
+**O QUE INCLUYE**
+- Recetas probadas sin gluten y sin azúcar
+- Ingredientes de supermercado común
+- Paso a paso fácil de seguir
+- Opciones para desayuno, snack y comidas
+- Acceso inmediato (digital)
+
+**PARA QUIÉN ES**
+- Personas que se hinchan con el pan normal
+- Quienes buscan alternativas sin gluten
+- Quienes quieren comer pan sin culpa
+- Familias que buscan opciones más saludables
+
+**TESTIMONIOS**
+- 3 cards estilo tradicional (não WhatsApp)
+- Citações curtas com nome
+
+**OFERTA**
+- Precio tachado: $47
+- Precio actual: $9
+- Pago único
+- Acceso inmediato
+- Garantía 7 días
+
+**FAQ**
+- "Es difícil de preparar?" - No, recetas simples
+- "Necesito ingredientes especiales?" - No, supermercado común
+- "Cuánto tiempo toma?" - Depende, pero son prácticas
+- "Tiene garantía?" - Sí, 7 días
+
+---
+
+### Arquivos a Criar/Modificar
+
+| Arquivo | Ação |
+|---------|------|
+| `src/pages/Safe.tsx` | CRIAR - Nova página |
+| `src/App.tsx` | Adicionar rota `/safe` |
+
+---
+
+### Detalhes Técnicos
+
+**Safe.tsx incluirá:**
+- Helmet com SEO otimizado para orgânico
+- Hook useTracking (ViewContent, AddToWishlist, InitiateCheckout)
+- Estrutura mobile-first
+- Mesmo estilo visual (branco, simples, sem firulas)
+- Links de checkout Hotmart iguais
+
+**Rota em App.tsx:**
+```tsx
+import Safe from "./pages/Safe";
+// ...
+<Route path="/safe" element={<Safe />} />
+```
+
+---
+
+### Estilo Visual
+
+- Fundo branco
+- Textos em preto/cinza
+- CTAs em verde (bg-green-600)
+- Cards com bordas suaves
+- Ícones de check (lucide-react)
+- Accordion nativo para FAQ
+- Sem animações ou efeitos
+- Fonte padrão (Inter/system)
