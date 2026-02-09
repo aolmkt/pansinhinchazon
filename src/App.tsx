@@ -9,6 +9,7 @@ import IndexB from "./pages/IndexB";
 import Safe from "./pages/Safe";
 import NotFound from "./pages/NotFound";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
+import TermosServico from "./pages/TermosServico";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => {
               <Route path="/a" element={<Index />} />
               <Route path="/b" element={<IndexB />} />
               <Route path="/politica-de-privacidade-respondedor-de-comentarios" element={<PoliticaPrivacidade />} />
+              <Route path="/termos-de-servico-respondedor-de-comentarios" element={<TermosServico />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
