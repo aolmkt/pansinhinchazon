@@ -1,32 +1,28 @@
 
 
-## Plano: Criar Página de Termos de Servico
+## Plano: Remover Paginas de Politica de Privacidade e Termos de Servico
 
-### Objetivo
-Criar uma pagina de Termos de Servico seguindo o mesmo padrao visual e tecnico da pagina de Politica de Privacidade existente.
+### Arquivos a Excluir
 
----
+- `src/pages/PoliticaPrivacidade.tsx`
+- `src/pages/TermosServico.tsx`
 
-### Arquivos a Criar/Modificar
+### Arquivo a Modificar
 
-| Arquivo | Acao |
-|---------|------|
-| `src/pages/TermosServico.tsx` | CRIAR - Nova pagina |
-| `src/App.tsx` | Adicionar rota `/termos-de-servico-respondedor-de-comentarios` |
+**`src/App.tsx`**
+- Remover imports de `PoliticaPrivacidade` e `TermosServico`
+- Remover as duas rotas:
+  - `/politica-de-privacidade-respondedor-de-comentarios`
+  - `/termos-de-servico-respondedor-de-comentarios`
 
----
+### Resultado
 
-### Detalhes Tecnicos
+As rotas restantes serao:
 
-**TermosServico.tsx:**
-- Mesmo layout da `PoliticaPrivacidade.tsx` (max-w-2xl, fundo branco, texto preto, mobile-first)
-- Helmet com `noindex, nofollow`
-- Titulo: "Termos de Servico - Respondedor de Comentarios"
-- Conteudo completo fornecido pelo usuario
-- Email de contato: `contato@pansinhinchazon.com` (mesmo da politica de privacidade)
-- Secoes: Sobre o aplicativo, Aceitacao dos termos, Uso permitido, Limitacoes e responsabilidades, Propriedade intelectual, Isencao de responsabilidade, Alteracoes nos termos, Lei aplicavel e contato
-
-**App.tsx:**
-- Adicionar import de `TermosServico`
-- Adicionar rota: `<Route path="/termos-de-servico-respondedor-de-comentarios" element={<TermosServico />} />`
+| Rota | Pagina |
+|------|--------|
+| `/` | Safe |
+| `/a` | Index |
+| `/b` | IndexB |
+| `*` | NotFound |
 
